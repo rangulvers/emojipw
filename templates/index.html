@@ -25,6 +25,16 @@
                             <input name="inputEmoji" type="text" class="form-control" placeholder="Enter Emojis Only"
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
+                                <select name="language" class="form-control" id="languageselection">
+                                    <option value="en">en</option>
+                                    <option value="de">de</option>
+                                    <option value="es">es</option>
+                                    <option value="pt">pt</option>
+                                    <option value="it">it</option>
+                                    <option value="fr">fr</option>
+                                </select>
+                            </div>
+                            <div class="input-group-append">
                                 <button class="btn btn-outline-primary" type="submit">Generate Password</button>
                             </div>
                         </div>
@@ -43,6 +53,8 @@
                     <a class="btn btn-primary btn-lg"
                         href="https://www.linkedin.com/feed/update/urn:li:activity:6949640630297899008/" role="button"
                         target="_blank">Learn more</a>
+                    <a class="btn btn-secondary btn-lg" href="https://github.com/rangulvers/emojipw" role="button"
+                        target="_blank">Github</a>
                 </div>
             </div>
         </div>
@@ -60,15 +72,26 @@
                 </div>
             </div>
         </div>
-        {% endif %}
-
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">Made for fun. <a href="https://github.com/rangulvers/emojipw" class="alert-link"
-                    target="_blank">EmojiPW &#127790;</a></span>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Shortcodes
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">{{result}}</h5> -->
+                        <p class="card-text">
+                            {% for code in shortcodes %}
+                            {{code}}</br>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+        {% endif %}
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

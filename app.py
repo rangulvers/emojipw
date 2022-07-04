@@ -7,21 +7,28 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        pw = generatePW(request.form["inputEmoji"])
-        return render_template("index.html", result=pw, em=request.form["inputEmoji"])
+        lang = request.form["language"]
+        pw, shortcodes = generatePW(request.form["inputEmoji"], lang)
+        return render_template("index.html", result=pw, em=request.form["inputEmoji"], shortcodes=shortcodes)
     elif request.method == 'GET':
         return render_template('index.html')
 
 
-def generatePW(inputEmoji):
+def generatePW(inputEmoji, lang):
     lst = [str.upper, str.lower]
     newPWin = []
+    shortcodes = []
     for e in inputEmoji:
-        if emoji.demojize(e).startswith(":"):
-            newPWin.append(random.choice(emoji.demojize(e)))
-    return ''.join(random.choice(lst)(c) for c in newPWin)
+        shortcode = getShortCode(e, lang)
+        if shortcode.startswith(":"):
+            shortcodes.append(shortcode)
+            newPWin.append(random.choice(shortcode))
+    return ''.join(random.choice(lst)(c) for c in newPWin), shortcodes
+
+
+def getShortCode(input, lang):
+    return emoji.demojize(input, language=lang)
 
 
 if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)

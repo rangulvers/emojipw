@@ -6,6 +6,8 @@ This is exactly how EmojiPW was created.
 
 Enter any combination of emojis and it will generate a random password based on the emoji shortcodes. This is possible thanks to the [Emoji](https://github.com/carpedm20/emoji/) project.
 
+[Generate Password Now](https://emojipw.herokuapp.com/)
+
 No passwords are logged during the creation (check the code)
 
 **Enjoy**
