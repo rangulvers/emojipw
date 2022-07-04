@@ -16,13 +16,10 @@ def index():
 def generatePW(inputEmoji):
     lst = [str.upper, str.lower]
     newPWin = []
-    newPWF = ''
     for e in inputEmoji:
         if emoji.demojize(e).startswith(":"):
             newPWin.append(random.choice(emoji.demojize(e)))
-            newPwSt = "".join(newPWin)
-            newPWF = ''.join(random.choice(lst)(c) for c in newPwSt)
-    return newPWF
+    return ''.join(random.choice(lst)(c) for c in newPWin)
 
 
 if __name__ == '__main__':
