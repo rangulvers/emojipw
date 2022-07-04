@@ -16,14 +16,14 @@ def index():
 
 def generatePW(inputEmoji, lang):
     lst = [str.upper, str.lower]
-    newPWin = []
+    newPW = []
     shortcodes = []
     for e in inputEmoji:
         shortcode = getShortCode(e, lang)
         if shortcode.startswith(":"):
             shortcodes.append(shortcode)
-            newPWin.append(random.choice(shortcode))
-    return ''.join(random.choice(lst)(c) for c in newPWin), shortcodes
+            newPW.append(random.choice(shortcode))
+    return ''.join(random.choice(lst)(c) for c in newPW), shortcodes
 
 
 def getShortCode(input, lang):
