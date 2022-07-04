@@ -1,56 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>EmojiPW 🔑</title>
+
+<head>
+    <title>EmojiPW &#127790;</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div class="container">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+</head>
+
+<body>
+    <div class="container">
         <div class="row">
-            <div class="col-l-12">
+            <div class="col-md-8 offset-md-2">
                 <form method="post" action="/">
-                <div class="form-group">
-                <label for=""></label>
-                <div class="input-group mb-3">
-  <input name="inputEmoji" type="text" class="form-control" placeholder="Emojis Only" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="submit">Generate Password</button>
-  </div>
-</div>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for=""></label>
+                        <div class="input-group mb-3">
+                            <input name="inputEmoji" type="text" class="form-control" placeholder="Enter Emojis Only"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="submit">Generate Password</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-               {% if result %}
         <div class="row">
-    
-
-<div class="card">
-  <div class="card-header">
-    Your new Password
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{result}}</h5>
-    <p class="card-text">Generated from : {{em}}</p>
-
-  </div>
-</div>
-
-
-         
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron">
+                    <h1 class="display-4">EmojiPW &#127790;</h1>
+                    <p class="lead">Create state of the art, secure passwords with emojis &#129409; </p>
+                    <hr class="my-4">
+                    <p>Please use the service responsible and <span class="badge badge-warning">NEVER EVER</span> share
+                        your password</p>
+                    <a class="btn btn-primary btn-lg"
+                        href="https://www.linkedin.com/feed/update/urn:li:activity:6949640630297899008/" role="button"
+                        target="_blank">Learn more</a>
+                </div>
+            </div>
         </div>
-          {% endif %}
-      </div>
+        {% if result %}
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Your new Password generated from : {{em}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{result}}</h5>
+                        <!-- <p class="card-text">Generated from : {{em}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Made for fun. <a href="https://github.com/rangulvers/emojipw" class="alert-link"
+                    target="_blank">EMOJIPW</a></span>
+        </div>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
 
+</html>

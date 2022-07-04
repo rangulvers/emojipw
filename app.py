@@ -22,7 +22,6 @@ def generatePW(inputEmoji):
             newPWin.append(random.choice(emoji.demojize(e)))
             newPwSt = "".join(newPWin)
             newPWF = ''.join(random.choice(lst)(c) for c in newPwSt)
-    print(newPWF)
     return newPWF
 
 
