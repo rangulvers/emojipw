@@ -75,13 +75,30 @@
             <div class="col-md-8 offset-md-2">
                 <div class="card">
                     <div class="card-header">
-                        Shortcodes
+                        Metadata
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            {% for code in shortcodes %}
-                            {{code}}</br>
-                            {% endfor %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Emoji</th>
+                                    <th>Shortcode</th>
+                                    <th>Unicode</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for meta in metadata %}
+                                <tr>
+                                    <td>{{meta.emoji}}</td>
+                                    <td>{{meta.short}}</td>
+                                    <td><a href="https://unicode-table.com/{{meta.lang}}/{{meta.unicode_clean}}/"
+                                            class="badge badge-light">{{meta.unicode}}</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                         </p>
                     </div>
                 </div>
